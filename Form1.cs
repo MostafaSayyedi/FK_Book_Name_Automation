@@ -17,6 +17,7 @@ namespace FK_Book_Name
             InitializeComponent();
         }
 
+
         private void btn_Submit_Click(object sender, EventArgs e)
         {
             string Book = txt_Book_Name.Text;
@@ -41,10 +42,15 @@ namespace FK_Book_Name
 
             string step4 = step3 + "_faghatketab.ir";
             lbl_Book_Result.Text = step4.ToString();
-
+            System.Windows.Forms.Clipboard.SetText(step4);
             //Random random = new Random();
             //long randomNumber = random.Next(1000000000000000, (int)9999999999999999);
             //Console.WriteLine(random.Next(1, 1000000000));
+        }
+
+        private void btn_Copy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(lbl_Book_Result.Text);
         }
     }
 }
